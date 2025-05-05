@@ -59,8 +59,3 @@ app.include_router(alerts, prefix="/alerts", tags=["alerts"])
 @app.get("/")
 def root():
     return {"message": "Bitcoin Trading Backend is running"}
-
-# Run locally (optional for Render; main execution handled via start command)
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True, workers=2, lifespan="on")
